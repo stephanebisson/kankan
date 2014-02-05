@@ -11,6 +11,11 @@ namespace :import do
   	end
   end
 
+  desc "removed all the words"
+  task words: :environment do
+    Word.destroy_all
+  end
+
 end
 
 
