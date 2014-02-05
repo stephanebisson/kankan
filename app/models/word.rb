@@ -10,6 +10,18 @@ class Word
   	pinyin.split.map{|p| accented(p) }.join ' ' 
   end
 
+  def self.create_from_line(line)
+    line_re = /^(?<chinese>.*?)\s\[(?<pinyin>.*?)\]\s\/(?<english>.*?)$/
+    parts = line.match line_re
+
+    create! \
+        mandarin_traditional: parts['chinese'].split.first, 
+        mandarin_simplified: parts['chinese'].split.last, 
+        mandarin_length: parts['chinese'].split.last.length, 
+        pinyin: parts['pinyin'], 
+        english: parts['english']
+  end
+
   private 
   def accented(pinyin)
   	accents = {
