@@ -1,0 +1,28 @@
+// Place all the styles related to the card controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@mixin center-block {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#card {
+	@include center-block;
+	height: 400px;
+	width: 400px;
+	
+	.chinese {
+		font-size: 48px;
+	}
+
+	.pinyin {
+		font-size: 24px;
+	}
+
+	.english {
+		font-size: 16px;
+	}
+
+}
