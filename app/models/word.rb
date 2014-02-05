@@ -5,9 +5,24 @@ class Word
   field :l, as: :mandarin_length, type: Integer
   field :p, as: :pinyin, type: String
   field :e, as: :english, type: String
+  field :h, as: :level, type: Hash
+  field :el, as: :elected_level, type: Integer
+  field :w, as: :nb_wrong, type: Integer
 
   def accented_pinyin
   	pinyin.split.map{|p| accented(p) }.join ' ' 
+  end
+
+  def vote_level(l)
+    self.level ||= {}
+    self.level[l] ||= 0
+    self.level[l] = self.level[l] + 1
+    update_level
+  end
+
+  def vote_wrong
+    self.nb_wrong ||= 0
+    self.nb_wrong = self.nb_wrong + 1    
   end
 
   def self.from_line(line)
@@ -22,7 +37,22 @@ class Word
         english: parts['english']
   end
 
+  def self.random_uncategorized
+    uncategorized = Word.where(level: nil)
+    uncategorized.skip(Random.rand(uncategorized.count)).first
+  end
+
+  def self.random(size)
+    right_size = Word.where(mandarin_length: size)
+    right_size.skip(Random.rand(right_size.count)).first
+  end
+
   private 
+
+  def update_level
+    self.elected_level = level.max_by{|k,v| v}.first
+  end
+
   def accented(pinyin)
   	accents = {
   		a: ['ā', 'á', 'ǎ', 'à', 'a'],

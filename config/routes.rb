@@ -1,8 +1,19 @@
 Kankan::Application.routes.draw do
 
   get "stat/index"
-  get "welcome/index"
+
   root 'welcome#index'
+
+  resources :categorize do
+    member do
+      post 'choose'
+      post 'wrong'
+    end
+
+    collection do
+      get 'next'
+    end
+  end
 
   resources :cards do
     member do 
