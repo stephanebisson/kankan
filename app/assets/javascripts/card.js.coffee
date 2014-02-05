@@ -3,7 +3,6 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 $ ->
-	console.log "asdf" 
 	$('#reveal').off('click').on 'click', -> 
 		$('#reveal').hide()
 		$('.answer').removeClass 'hidden'
