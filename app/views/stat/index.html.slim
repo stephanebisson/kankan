@@ -1,0 +1,13 @@
+h1 Some stats about the users
+table.table
+	tr
+		th Who
+		th Right
+		th Wrong
+		th Last seen
+	- @users.each do |user|
+		tr 
+			td = user.ip_address
+			td = user.rights
+			td = user.wrongs
+			td = user.last_seen

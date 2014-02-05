@@ -1,5 +1,6 @@
 Kankan::Application.routes.draw do
 
+  get "stat/index"
   get "welcome/index"
   root 'welcome#index'
 

@@ -22,8 +22,11 @@ class CardsController < ApplicationController
   def log_answer(right)
     ip = request.remote_ip
     character = params[:id]
+    now = DateTime.now
+
     user = User.find_or_create_by! ip_address: ip
-    user.answers.create! character: character, right: right, when: DateTime.now
+    user.answers.create! character: character, right: right, when: now
+    user.last_seen = now
     user.save!
   end
 
