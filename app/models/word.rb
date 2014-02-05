@@ -1,20 +1,20 @@
 class Word
   include Mongoid::Document
-  field :mandarin_traditional, type: String
-  field :mandarin_simplified, type: String
-  field :mandarin_length, type: Integer
-  field :pinyin, type: String
-  field :english, type: String
+  field :t, as: :mandarin_traditional, type: String
+  field :s, as: :mandarin_simplified, type: String
+  field :l, as: :mandarin_length, type: Integer
+  field :p, as: :pinyin, type: String
+  field :e, as: :english, type: String
 
   def accented_pinyin
   	pinyin.split.map{|p| accented(p) }.join ' ' 
   end
 
-  def self.create_from_line(line)
-    line_re = /^(?<chinese>.*?)\s\[(?<pinyin>.*?)\]\s\/(?<english>.*?)$/
+  def self.from_line(line)
+    line_re = /^(?<chinese>.*?)\s\[(?<pinyin>.*?)\]\s\/(?<english>.*?)\//
     parts = line.match line_re
 
-    create! \
+    new \
         mandarin_traditional: parts['chinese'].split.first, 
         mandarin_simplified: parts['chinese'].split.last, 
         mandarin_length: parts['chinese'].split.last.length, 
