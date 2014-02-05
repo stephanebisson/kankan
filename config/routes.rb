@@ -1,6 +1,7 @@
 Kankan::Application.routes.draw do
 
-  root 'cards#random'
+  get "welcome/index"
+  root 'welcome#index'
 
   resources :cards do
     member do 
