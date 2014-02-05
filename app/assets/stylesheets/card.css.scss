@@ -10,11 +10,15 @@
 
 #card {
 	@include center-block;
-	height: 400px;
 	width: 400px;
+
+	.well {
+		height: 250px;
+		
+	}
 	
 	.chinese {
-		font-size: 48px;
+		font-size: 72px;
 	}
 
 	.pinyin {
