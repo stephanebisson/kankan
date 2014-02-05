@@ -42,9 +42,14 @@ class Word
     uncategorized.skip(Random.rand(uncategorized.count)).first
   end
 
-  def self.random(size)
-    right_size = Word.where(mandarin_length: size)
-    right_size.skip(Random.rand(right_size.count)).first
+  def self.random(size, level=nil)
+    words = Word.where(mandarin_length: size)
+    words = words.where(level: level.to_i) if level.present?
+    if words.exists?
+      words.skip(Random.rand(words.count)).first
+    else
+      random(size)
+    end
   end
 
   private 

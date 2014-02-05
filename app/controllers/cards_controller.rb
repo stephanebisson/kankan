@@ -1,7 +1,8 @@
 class CardsController < ApplicationController
   def random
   	@size = params[:size] || 1
-  	@word = Word.random @size
+    @level = params[:level]
+  	@word = Word.random @size, @level
   end
 
   def right
