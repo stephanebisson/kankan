@@ -1,5 +1,5 @@
 #card
-	h1.text-center Kàn Kan Kǎ
+	h1.text-center Do you know this word?
 	.well.text-center
 		p.chinese = @word.mandarin_simplified
 		p
@@ -8,7 +8,7 @@
 			.answer.english.hidden = @word.english
 
 	.btn-group.btn-group-justified
-		a#reveal.btn.btn-lg.btn-primary REVEAL
+		a#reveal.btn.btn-lg.btn-primary SHOW ME
 
 	.answer.hidden.btn-group.btn-group-justified
 		= link_to right_card_path(@word, size: @size), method: :post, class: 'btn btn-lg btn-success' do

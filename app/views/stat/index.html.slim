@@ -1,13 +1,15 @@
-h1 Some stats about the users
+h1 Who's been active recently
+br
+br
 table.table
 	tr
-		th Who
-		th Right
-		th Wrong
+		th User IP
+		th Right answers
+		th Wrong answers
 		th Last seen
 	- @users.each do |user|
 		tr 
 			td = user.ip_address
 			td = user.rights
 			td = user.wrongs
-			td = user.last_seen
+			td = "#{time_ago_in_words(user.last_seen)} ago"
