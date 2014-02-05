@@ -41,9 +41,12 @@ class Word
   	elsif word['ou']
   		word['ou'] = "#{accents[:o][tone]}u"
   	else
-  		re = /^(?<before>[^aeiou]*?)(?<first_vowels>[aeiou]*?)(?<last_vowel>[aeiou]{1})(?<after>[^aeiou]*)$/
-  		parts = word.match re
-  		word = "#{parts['before']}#{parts['first_vowels']}#{accents[parts['last_vowel'].to_sym][tone]}#{parts['after']}"
+      begin
+    		re = /^(?<before>[^aeiou]*?)(?<first_vowels>[aeiou]*?)(?<last_vowel>[aeiou]{1})(?<after>[^aeiou]*)$/
+    		parts = word.match re
+    		word = "#{parts['before']}#{parts['first_vowels']}#{accents[parts['last_vowel'].to_sym][tone]}#{parts['after']}"
+      rescue
+      end
   	end
 
   	word

@@ -1,7 +1,7 @@
 class CardsController < ApplicationController
   def random
-  	size = params[:size] || 1
-  	right_size = Word.where(mandarin_length: size)
+  	@size = params[:size] || 1
+  	right_size = Word.where(mandarin_length: @size)
   	@word = right_size.skip(Random.rand(right_size.count)).first
 
   	@count = Word.count
@@ -9,12 +9,12 @@ class CardsController < ApplicationController
 
   def right
     log_answer true
-  	redirect_to random_cards_path
+  	redirect_to random_cards_path(size: params[:size])
   end
 
   def wrong
     log_answer false
-  	redirect_to random_cards_path
+  	redirect_to random_cards_path(size: params[:size])
   end
 
   private

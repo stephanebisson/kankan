@@ -11,8 +11,8 @@
 		a#reveal.btn.btn-lg.btn-primary REVEAL
 
 	.answer.hidden.btn-group.btn-group-justified
-		= link_to right_card_path(@word), method: :post, class: 'btn btn-lg btn-success' do
+		= link_to right_card_path(@word, size: @size), method: :post, class: 'btn btn-lg btn-success' do
 			span.glyphicon.glyphicon-thumbs-up
-		= link_to wrong_card_path(@word), method: :post, class: 'btn btn-lg btn-danger' do
+		= link_to wrong_card_path(@word, size: @size), method: :post, class: 'btn btn-lg btn-danger' do
 			span.glyphicon.glyphicon-thumbs-down
 
