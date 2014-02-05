@@ -2,15 +2,11 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-@mixin center-block {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
+
 
 #card {
 	@include center-block;
-	width: 400px;
+	// width: 400px;
 
 	.well {
 		height: 250px;
