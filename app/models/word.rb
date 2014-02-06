@@ -44,7 +44,7 @@ class Word
 
   def self.random(size, level=nil)
     words = Word.where(mandarin_length: size)
-    words = words.where(level: level.to_i) if level.present?
+    words = words.where(elected_level: level.to_i) if level.present?
     if words.exists?
       words.skip(Random.rand(words.count)).first
     else
