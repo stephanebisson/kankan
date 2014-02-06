@@ -43,16 +43,21 @@ class Word
   end
 
   def self.random(size, level=nil)
-    words = Word.where(mandarin_length: size)
-    words = words.where(elected_level: level.to_i) if level.present?
-    if words.exists?
-      words.skip(Random.rand(words.count)).first
-    else
-      random(size)
+    right_size = Word.where(mandarin_length: size)
+
+    if level.present?
+      right_level = right_size.where(elected_level: level.to_i)
+      return random_from_set right_level if right_level.exists?
     end
+
+    random_from_set right_size
   end
 
   private 
+
+  def self.random_from_set(set)
+    set.skip(Random.rand(set.count)).first
+  end
 
   def update_level
     self.elected_level = level.max_by{|k,v| v}.first

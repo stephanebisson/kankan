@@ -7,12 +7,10 @@ class CardsController < ApplicationController
 
   def right
     log_answer true
-  	redirect_to random_cards_path(size: params[:size])
   end
 
   def wrong
     log_answer false
-  	redirect_to random_cards_path(size: params[:size])
   end
 
   private
@@ -26,6 +24,8 @@ class CardsController < ApplicationController
     user.answers.create! character: character, right: right, when: now
     user.last_seen = now
     user.save!
+
+  	redirect_to random_cards_path(size: params[:size], level: params[:level])
   end
 
 end
