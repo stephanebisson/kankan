@@ -10,6 +10,8 @@ html
 	body
 		.container 
 			= render 'layouts/nav'
+			- if notice
+				p#notice.alert.alert-success = notice
 			= yield
 			footer.text-center
 				| Chinese-English dictionary provided by 

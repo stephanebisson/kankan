@@ -1,5 +1,12 @@
 Kankan::Application.routes.draw do
 
+  resources :feedbacks do
+    member do
+      get 'new'
+      post 'create'
+    end
+  end
+
   get "stat/index"
 
   root 'welcome#index'

@@ -11,6 +11,7 @@ gem 'mongoid', github: 'mongoid/mongoid'
 gem 'sass-rails', '~> 4.0.0'
 gem 'bootstrap-sass'
 gem 'slim-rails'
+gem 'simple_form'
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
@@ -45,6 +46,7 @@ end
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
+  gem 'letter_opener'
 end
 
 gem 'newrelic_rpm'

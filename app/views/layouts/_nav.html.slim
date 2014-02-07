@@ -12,23 +12,19 @@ nav.navbar.navbar-inverse role="navigation"
     <!-- Collect the nav links, forms, and other content for toggling -->
     .collapse.navbar-collapse#bs-example-navbar-collapse-1
       ul.nav.navbar-nav
-        li
-          = link_to 'Practice', random_cards_path
-        li
-          = link_to 'Help', next_categorize_index_path
+        li = link_to 'Practice', random_cards_path
+        li = link_to 'Help', next_categorize_index_path
         li.dropdown
           a.dropdown-toggle href="#" data-toggle="dropdown" 
             | Level 
             b.caret
           ul.dropdown-menu
-            li
-              = link_to 'Beginner', random_cards_path(level: 1)
-            li
-              = link_to 'Intermediate', random_cards_path(level: 2)
-            li
-              = link_to 'Expert', random_cards_path(level: 3)
+            li = link_to 'Beginner', random_cards_path(level: 1)
+            li = link_to 'Intermediate', random_cards_path(level: 2)
+            li = link_to 'Expert', random_cards_path(level: 3)
 
-      / ul.nav.navbar-nav.navbar-right
+      ul.nav.navbar-nav.navbar-right
+        li = link_to 'feedback', new_feedback_path
       /   li
       /     = link_to 'Leaderboard', stat_index_path
       /   li.dropdown
@@ -45,6 +41,3 @@ nav.navbar.navbar-inverse role="navigation"
       /       li.divider
       /       li
       /         a href="#" Log out
-      /   li
-      /     a href="#"
-      /       span.glyphicon.glyphicon-comment
