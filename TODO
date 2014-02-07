@@ -1,5 +1,8 @@
-
-- user accounts
+- card#random redirects to card#show/id
+- feedback page use "stars rating"
+- word rating stats
+- create custom words lists
+- user accounts (fb?)
 - preference (word length)
-- gamification
-- ads banner
+- gamification (earn points and/or medals)
+- ads
