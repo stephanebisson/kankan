@@ -13,6 +13,8 @@ gem 'bootstrap-sass'
 gem 'slim-rails'
 gem 'simple_form'
 
+gem 'ting'
+
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 
