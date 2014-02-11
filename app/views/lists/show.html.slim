@@ -1,0 +1,15 @@
+p#notice = notice
+
+p
+  strong Name:
+  = @list.name
+p
+  strong Level:
+  = @list.level
+p
+  strong Words:
+  = @list.words
+
+= link_to 'Edit', edit_list_path(@list)
+'|
+= link_to 'Back', lists_path

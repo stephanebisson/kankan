@@ -1,0 +1,10 @@
+= simple_form_for(@list) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :name
+    = f.input :level
+    = f.association :words
+
+  .form-actions
+    = f.button :submit
