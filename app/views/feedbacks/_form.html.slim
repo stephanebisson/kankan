@@ -7,8 +7,9 @@
   .form-group
     = f.input :email, label: "Leave your email if you expect a response", hint: "We'll never spam you, ever.", input_html: {class: 'form-control'}
 
-    .form-group
-    = f.input :rating, collection: 1..5, hint: '1 is bad, 5 is great', input_html: {class: 'form-control'}
+  .form-group.rating
+    = f.collection_radio_buttons :rating, 1..5, :to_s, :to_s, { item_wrapper_tag: false } do |b|
+    	= b.radio_button(class: 'rating-input') + b.label(class: 'rating-star') {''}
 
   .form-actions
     = f.button :submit, 'Submit', class: 'btn btn-default'
