@@ -5,7 +5,7 @@
     = f.input :comment, as: :text, label: 'How can we make this app more useful for you?', input_html: {class: 'form-control'}
   
   .form-group
-    = f.input :email, label: "Leave your email if you expect a response", hint: "We'll never spam you, ever.", input_html: {class: 'form-control'}
+    = f.input :email, label: "Leave your email and we'll get back to you", hint: "We'll never spam you, ever.", input_html: {class: 'form-control'}
 
   .form-group.rating
     = f.collection_radio_buttons :rating, 1..5, :to_s, :to_s, { item_wrapper_tag: false } do |b|
