@@ -47,7 +47,7 @@ class Word
 
     if level.present?
       right_level = right_size.where(elected_level: level.to_i)
-      return random_from_set right_level if right_level.exists?
+      return random_from_set(right_level) if right_level.exists?
     end
 
     random_from_set right_size

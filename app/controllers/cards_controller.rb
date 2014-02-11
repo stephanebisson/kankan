@@ -1,8 +1,15 @@
 class CardsController < ApplicationController
   def random
-  	@size = params[:size] || 1
+  	size = params[:size] || 1
+    level = params[:level]
+  	word = Word.random size, level
+    redirect_to card_path(word, size: params[:size], level: params[:level])
+  end
+
+  def show
+    @size = params[:size] || 1
     @level = params[:level]
-  	@word = Word.random @size, @level
+    @word = Word.find params[:id]    
   end
 
   def right

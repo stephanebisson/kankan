@@ -24,6 +24,7 @@ Kankan::Application.routes.draw do
 
   resources :cards do
     member do 
+      get 'show'
       post 'right'
       post 'wrong'
     end
