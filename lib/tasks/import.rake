@@ -7,13 +7,9 @@ namespace :import do
   	File.open('lib/cedict_ts.u8', 'r').each do |line| 
   		next if is_comment line
 
-      begin
-        word = Word.from_line line
-        word.save!
-        puts word.mandarin_simplified
-      rescue
-        puts "failed to import: #{line}"
-      end
+      word = Word.from_line line
+      word.save!
+      puts word.mandarin_simplified
   	end
   end
 end

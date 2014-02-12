@@ -14,8 +14,8 @@ class Word
     new \
         mandarin_traditional: parts['chinese'].split.first, 
         mandarin_simplified: parts['chinese'].split.last, 
-        pinyin: parts['pinyin'].pretty_tones, 
-        english: parts['english'].pretty_tones
+        pinyin: to_pinyin(parts['pinyin']),
+        english: to_pinyin(parts['english'])
   end
 
   def self.random
@@ -24,6 +24,12 @@ class Word
 
   def to_s
     "#{mandarin_simplified} (#{pinyin})"
+  end
+
+  private 
+
+  def self.to_pinyin(word)
+    word.pretty_tones rescue word
   end
 
 end
