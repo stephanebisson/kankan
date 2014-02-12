@@ -13,17 +13,6 @@ Kankan::Application.routes.draw do
 
   root 'welcome#index'
 
-  resources :categorize do
-    member do
-      post 'choose'
-      post 'wrong'
-    end
-
-    collection do
-      get 'next'
-    end
-  end
-
   resources :cards do
     member do 
       get 'show'

@@ -3,16 +3,16 @@
 	.well.text-center
 		p.chinese = @word.mandarin_simplified
 		p
-			.answer.pinyin.hidden = @word.accented_pinyin
+			.answer.pinyin.hidden = @word.pinyin
 		p
-			.answer.english.hidden = @word.english_with_pinyin
+			.answer.english.hidden = @word.english
 
 	.btn-group.btn-group-justified
 		a#reveal.btn.btn-lg.btn-primary SHOW ME
 
 	.answer.hidden.btn-group.btn-group-justified
-		= link_to right_card_path(@word, size: @size, level: @level), method: :post, class: 'btn btn-lg btn-success' do
+		= link_to right_card_path(@word), method: :post, class: 'btn btn-lg btn-success' do
 			span.glyphicon.glyphicon-thumbs-up
-		= link_to wrong_card_path(@word, size: @size, level: @level), method: :post, class: 'btn btn-lg btn-danger' do
+		= link_to wrong_card_path(@word), method: :post, class: 'btn btn-lg btn-danger' do
 			span.glyphicon.glyphicon-thumbs-down
 
