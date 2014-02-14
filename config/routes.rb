@@ -1,7 +1,5 @@
 Kankan::Application.routes.draw do
 
-  resources :lists
-
   resources :feedbacks do
     member do
       get 'new'
