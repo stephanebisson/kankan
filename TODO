@@ -1,7 +1,11 @@
-- create custom words lists
+- display word type (verb, noun, adj, etc) colour-coded (from Lancaster)
+- display a random sample sentence using this word
 
-- word rating stats
+- word repetition algo -> ?
+	- add frequency to word database using Lancaster corpus
+
 - user accounts (fb?)
+
 - preference (word length)
 - gamification (earn points and/or medals)
 - ads

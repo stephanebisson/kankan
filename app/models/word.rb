@@ -6,6 +6,8 @@ class Word
   field :s, as: :mandarin_simplified, type: String
   field :p, as: :pinyin, type: String
   field :e, as: :english, type: String
+  embeds_many :word_types
+  index mandarin_simplified: 1
 
   def self.from_line(line)
     line_re = /^(?<chinese>.*?)\s\[(?<pinyin>.*?)\]\s\/(?<english>.*?)\//
@@ -19,8 +21,11 @@ class Word
   end
 
   def self.random
-    Word.skip(Random.rand(Word.count)).first
+    set = Word.excludes(word_types: nil)
+    set.skip(Random.rand(set.count)).first
   end
+
+
 
   def to_s
     "#{mandarin_simplified} (#{pinyin})"

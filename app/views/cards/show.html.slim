@@ -2,6 +2,11 @@
 	h1.text-center Do you know this word?
 	.well.text-center
 		p.chinese = @word.mandarin_simplified
+		- if @word.word_types.count == 1
+			p = @word.word_types.first.fullname
+		- if @word.word_types.count > 1
+			- for type in @word.word_types do
+				p = "#{type.fullname} (#{number_to_percentage(type.frequency * 100, precision: 2)})"
 		p
 			.answer.pinyin.hidden = @word.pinyin
 		p
