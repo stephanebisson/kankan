@@ -4,7 +4,8 @@ class CardsController < ApplicationController
   end
 
   def show
-    @word = Word.find params[:id]    
+    @word = Word.find params[:id]
+    @type = @word.word_types.order(frequency: 'DESC').first  
   end
 
   def right

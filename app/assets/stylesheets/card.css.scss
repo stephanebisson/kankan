@@ -30,4 +30,80 @@
 		// todo
 	}
 
+	.word-type {
+		// font-size: 24px;
+	}
+
+	// adjective
+	.adjective, 
+	.adjective-as-adverbial, 
+	.adjective-morpheme, 
+	.adjective-with-nominal-function, 
+	.adjective-with-nominal-function, 
+	.non-predicate-adjective, 
+	.non-predicate-adjective-morpheme {
+		background-color: yellow;
+	} 
+
+	.conjunction,
+	.conjunction-morpheme {
+		background-color: pink;
+	}
+	
+	.adverb,
+	.adverb-morpheme {
+		background-color: orange;
+	}
+	// dg: '',
+	// e: 'interjection',
+	// ew: 'sentential punctuation',
+	// f: 'directional locality',
+	// fg: 'locality morpheme',
+	// g: 'morpheme',
+	// h: 'prefix',
+	// i: 'idiom',
+	// j: 'abbreviation',
+	// k: 'suffix',
+	// l: 'fixed expressions',
+	// m: 'numeral',
+	// mg: 'numeric morpheme',
+	.common-noun, 
+	.noun-morpheme {
+		background-color: blue;
+	}
+	.personal-name, 
+	.place-name,
+	.organization-name, 
+	.nominal-character-string, 
+	.other-proper-noun {
+		background-color: blue;
+	}
+	// o: 'onomatopoeia',
+	// p: 'preposition',
+	// pg: 'preposition morpheme',
+	// q: 'classifier',
+	// qg: 'classifier morpheme',
+	.pronoun, 
+	.pronoun-morpheme {
+		background-color: blue;
+	}
+	// s: 'space word',
+	// t: 'time word',
+	// tg: 'time word morpheme',
+	// u: 'auxiliary',
+	.verb, 
+	.verb-as-adverbial, 
+	.verb-morpheme,
+	.verb-with-nominal-function {
+		background-color: red;
+	}
+
+	// w: 'symbol and non-sentential punctuation',
+	// x: 'unclassified items',
+	// y: 'modal particle ',
+	// yg: 'modal particle morpheme',
+	// z: 'descriptive',
+	// zg: 'descriptive morpheme'}
+
+
 }
