@@ -2,6 +2,13 @@
 
 - word repetition algo -> ?
 	- add frequency to word database using Lancaster corpus
+	- add word to user's list one at a time, in order of frequency
+	- R->W: next occurence is sooner
+	- W->R: next occurence is later
+	- R->R: next occurence is MUCH later
+	- W->W: next occurence is MUCH sooner
+	- Rs "fades away" just like memory fades away
+	- adaptative fading algo
 
 - user accounts (fb?)
 - get ip info for stats report
