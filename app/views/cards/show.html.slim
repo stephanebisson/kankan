@@ -1,7 +1,7 @@
 #card
 	h1.text-center Do you know this word?
 	.well.text-center
-		p.pull-right.badge.word-type class=("#{@type.fullname.gsub(' ', '-')}") = @type.fullname
+		p.badge.word-type class=("#{@type.fullname.gsub(' ', '-')}") = @type.fullname
 		p.chinese = @word.mandarin_simplified
 		p
 			.answer.pinyin.hidden = @word.pinyin
